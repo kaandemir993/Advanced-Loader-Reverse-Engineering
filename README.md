@@ -55,7 +55,7 @@ The loader uses a fixed memory address (`lRam0000000000000000`) and vtable calls
 - **Privilege escalation:** Used to gain SYSTEM-level privileges.
 - **COM hijacking:** Uses `FUN_180031f18` and `FUN_1800330c8`.
 
-<img src="./images/clbcatq_kernel.jpeg" alt="Clbcatq Kernel" width="200">
+<img src="./images/clbcatq_kernel.jpeg" alt="Clbcatq Kernel" width="500">
 
 *Ghidra view of fixed memory address and vtable calls.*
 
