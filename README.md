@@ -15,7 +15,7 @@ The loader targets `Shellhost.exe` as its primary process for payload injection.
 - 
 *WinDbg view of the obfuscated payload in Shellhost.exe.*
 
-![Shellhost Payload](images/shellhost_payload.jpg)
+<img src="images/shellhost_payload.jpg" alt="Shellhost Payload" width="500">
 
 ## amsi.dll – CFG Bypass & INT3 Traps
 
@@ -26,7 +26,7 @@ The loader injects a custom section into `amsi.dll` filled with `INT3` (0xCC) an
 - **Single `jmp`:** `jmp 0x00007ffbc85060c0` leads to the CFG bypass routine.
 - **CFG bypass:** Uses a custom bitmask to validate and redirect execution.
 
-![AMSI CFG Bypass](images/amsi_cfg_bypass.jpg)
+<img src="images/amsi_cfg_bypass.jpg" alt="AMSI CFG Bypass" width="500">
 
 *WinDbg view of INT3 traps and the single jmp instruction.*
 
@@ -40,7 +40,7 @@ The loader uses `LocalAlloc` to manually allocate memory for the payload. A cust
 - **Vtable assignment:** `*puVar12 = &PTR_FUN_180699290` for COM hijacking.
 - **File handle usage:** `puVar12[4] = hFile` suggests the loader reads from a file.
 
-![mstscax LocalAlloc](images/mstscax_localalloc.jpg)
+<img src="images/mstscax_localalloc.jpg" alt="mstscax LocalAlloc" width="500">
 
 *Ghidra view of LocalAlloc usage and manual struct allocation.*
 
@@ -55,7 +55,7 @@ The loader uses a fixed memory address (`lRam0000000000000000`) and vtable calls
 - **Privilege escalation:** Used to gain SYSTEM-level privileges.
 - **COM hijacking:** Uses `FUN_180031f18` and `FUN_1800330c8`.
 
-![clbcatq Kernel](images/clbcatq_kernel.jpg)
+<img src="images/clbcatq_kernel.jpg" alt="clbcatq Kernel" width="500">
 
 *Ghidra view of fixed memory address and vtable calls.*
 
